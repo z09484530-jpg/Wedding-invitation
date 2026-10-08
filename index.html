@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="Айбек менен Айдананын үйлөнүү тоюна чакыруу. Бул өзгөчө күнү биз менен болуңуз!">
+  <title>Айбек &amp; Айдана — үйлөнүү тоюна чакыруу</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="java.js" defer></script>
+</head>
+<body>
+  <div class="heart-garden" id="heart-garden" aria-hidden="true"></div>
+  <div class="butterfly-garden" aria-hidden="true">
+    <span class="butterfly butterfly-one"><i></i></span>
+    <span class="butterfly butterfly-two"><i></i></span>
+    <span class="butterfly butterfly-three"><i></i></span>
+    <span class="butterfly butterfly-four"><i></i></span>
+  </div>
+  <div class="invitation-overlay" id="invitation-overlay" role="dialog" aria-modal="true" aria-labelledby="envelope-title">
+    <div class="envelope-screen" id="envelope-screen">
+      <p class="eyebrow">СИЗГЕ АРНАЛГАН ӨЗГӨЧӨ ЧАКЫРУУ</p>
+      <h1 id="envelope-title">Жүрөктөн чыккан<br><em>чакыруубуз</em></h1>
+      <button class="envelope" id="open-envelope" type="button" aria-label="Чакыруу катты ачуу">
+        <span class="envelope-flap"></span>
+        <span class="envelope-seal">A<span>&amp;</span>A</span>
+      </button>
+      <p class="envelope-hint">Конвертти басып, чакырууну ачыңыз</p>
+    </div>
+    <article class="invitation-letter" id="invitation-letter" hidden>
+      <p class="eyebrow">БИЗДИН ҮЙЛӨНҮҮ ТОЮБУЗ</p>
+      <h2>Айбек <em>&amp;</em> Айдана</h2>
+      <figure class="couple-photo">
+        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Той күнүндөгү күйөө бала менен келин">
+        <figcaption>Биздин өзгөчө күнүбүз</figcaption>
+      </figure>
+      <p class="letter-greeting" aria-live="polite">Кымбаттуу <span id="letter-guest-greeting">коногубуз</span>!</p>
+      <p class="letter-copy">Өмүрүбүздүн эң бактылуу күнүндө сизди жаныбызда көрүүгө кубанычта болобуз.</p>
+      <div class="letter-details"><strong>22-август, 2027 · саат 15:00</strong><span>Ресторан · Ош шаары</span></div>
+      <div class="letter-map">
+        <iframe
+          title="Ош шаарындагы ресторандардын картасы"
+          src="https://maps.google.com/maps?q=restaurants%20in%20Osh%2C%20Kyrgyzstan&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <a class="letter-map-link" href="https://maps.google.com/?q=restaurants+in+Osh+Kyrgyzstan" target="_blank" rel="noreferrer">Ош шаарындагы ресторандарды картадан көрүү ↗</a>
+      <button class="button button-light speak-invitation" type="button">Чакыруу текстин угуу <span>♫</span></button>
+      <button class="button button-dark letter-continue" id="continue-to-site" type="button">Чакыруу сайтына өтүү <span>↓</span></button>
+    </article>
+  </div>
+
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Башкы бетке">A<span>&amp;</span>A</a>
+    <nav class="main-nav" aria-label="Негизги меню">
+      <a href="#story">Биз жөнүндө</a>
+      <a href="#day">Той программасы</a>
+      <a href="#place">Дарек</a>
+    </nav>
+    <a class="header-rsvp" href="#rsvp">Катышууну билдирүү <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-photo" role="img" aria-label="Үйлөнүү тоюна даярданып жаткан жаш жубайлар"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-topline"><span>БИЗДИН ҮЙЛӨНҮҮ ТОЮБУЗ</span><span>22 · 08 · 2027</span></div>
+      <div class="hero-content">
+        <p class="eyebrow light">ЭКИ ЖҮРӨК — БИР ТАГДЫР</p>
+        <h1 id="hero-title">Айбек <i>&amp;</i><br>Айдана</h1>
+        <p class="hero-subtitle">Жаңы барагыбыздын башталышына<br>сизди да күтөбүз</p>
+        <a class="round-link" href="#story" aria-label="Чакыруу тууралуу окуу">↓</a>
+      </div>
+      <p class="hero-side-note">БИЗДИН ЭҢ СҮЙҮКТҮҮ КҮНҮБҮЗГӨ КОШ КЕЛИҢИЗ</p>
+      <div class="hero-date"><span>Жекшемби</span><strong>22</strong><span>Август · 2027</span></div>
+    </section>
+
+    <section class="intro section-pad" id="story">
+      <div class="intro-mark" aria-hidden="true">A<span>&amp;</span>A</div>
+      <p class="eyebrow">КЫМБАТТУУ Жакындарыбыз ЖАНА ДОСТОРУБУЗ</p>
+      <h2>Сизди биздин<br><em>кубанычыбызга</em> ортоктош<br>болууга чакырабыз</h2>
+      <p class="intro-copy">Сүйүүбүздү баш коштуруу менен бекемдеп, өмүрүбүздүн эң маанилүү күнүн жакындарыбыз менен бөлүшкүбүз келет. Бул өзгөчө күнү биз менен болуңуз!</p>
+      <div class="intro-names"><span>АЙБЕК</span><span class="tiny-heart">♥</span><span>АЙДАНА</span></div>
+    </section>
+
+    <section class="love-poem section-pad" aria-labelledby="love-poem-title">
+      <p class="eyebrow">ЖҮРӨКТӨН ЧЫККАН САПТАР</p>
+      <h2 id="love-poem-title">Сүйүү <em>жөнүндө</em></h2>
+      <div class="poem-lines">
+        <p>Жолуктурду тагдыр бизди бир күнү,<br>Жарык кылды жүрөгүбүз түндөрдү.</p>
+        <p>Кол кармашып бирге басып жолдордон,<br>Бакыт таптык жылуулуктан, сөздөрдөн.</p>
+        <p>Эки жүрөк бир тилекте согулуп,<br>Бир өмүргө бирге кадам коюлуп.</p>
+        <p>Сүйүүбүзгө күбө болуп бүгүн сиз,<br>Кубанычты тең бөлүшүп кетиңиз.</p>
+      </div>
+      <span class="poem-signature">Айбек &amp; Айдана</span>
+    </section>
+
+    <section class="countdown-section">
+      <div class="countdown-photo" role="img" aria-label="Жубайлардын романтикалуу сүрөтү"></div>
+      <div class="countdown-panel">
+        <p class="eyebrow light">КҮТҮҮГӨ АЗ КАЛДЫ</p>
+        <h2>Ошол күнгө чейин</h2>
+        <div class="countdown" aria-label="Тойго чейинки убакыт">
+          <div><strong data-time="days">000</strong><span>КҮН</span></div>
+          <i>:</i>
+          <div><strong data-time="hours">00</strong><span>СААТ</span></div>
+          <i>:</i>
+          <div><strong data-time="minutes">00</strong><span>МҮНӨТ</span></div>
+          <i>:</i>
+          <div><strong data-time="seconds">00</strong><span>СЕКУНД</span></div>
+        </div>
+        <p class="countdown-date">22-август, 2027 · Ош шаары</p>
+      </div>
+    </section>
+
+    <section class="day-section section-pad" id="day">
+      <div class="section-heading">
+        <p class="eyebrow">БИРГЕ ӨТКӨРӨ ТУРГАН КҮН</p>
+        <h2>Тойдун <em>программасы</em></h2>
+        <p>Күнүбүздү жагымдуу көз ирмемдер менен бирге өткөрөлү.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-time">15:00</span><span class="timeline-dot"></span>
+          <div><h3>Конокторду тосуп алуу</h3><p>Жылуу учурашуу, сүрөткө түшүү жана welcome drink.</p></div>
+          <span class="timeline-no">01</span>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-time">16:00</span><span class="timeline-dot"></span>
+          <div><h3>Салтанаттуу азем</h3><p>Биздин жаңы үй-бүлөнүн башталышына күбө болуңуз.</p></div>
+          <span class="timeline-no">02</span>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-time">17:00</span><span class="timeline-dot"></span>
+          <div><h3>Майрамдык кече</h3><p>Даамдуу дасторкон, куттуктоолор жана бий.</p></div>
+          <span class="timeline-no">03</span>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-time">22:00</span><span class="timeline-dot"></span>
+          <div><h3>Тойдун аягы</h3><p>Жүрөктө кала турган сонун эскерүүлөр менен.</p></div>
+          <span class="timeline-no">04</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="place-section" id="place">
+      <div class="place-image" role="img" aria-label="Той өтө турган кооз жай"></div>
+      <div class="place-content">
+        <p class="eyebrow">БИЗДИ КАЙДАН ТАБАСЫЗ</p>
+        <h2>Жолугушканча<br><em>той аземинде кутобуз</em></h2>
+        <div class="place-detail">
+          <span class="detail-icon" aria-hidden="true">⌖</span>
+          <div><strong>Ресторан</strong><p>Ош шаары, Кыргызстан</p></div>
+        </div>
+        <div class="place-detail">
+          <span class="detail-icon" aria-hidden="true">◷</span>
+          <div><strong>22-август, 2027</strong><p>Конокторду тосуу — 15:00</p></div>
+        </div>
+        <a class="text-link" href="https://maps.google.com/?q=restaurants+in+Osh+Kyrgyzstan" target="_blank" rel="noreferrer">Ош шаарындагы ресторандарды картадан көрүү <span>↗</span></a>
+        <a class="text-link" href="https://wa.me/996774062344" target="_blank" rel="noreferrer">WhatsApp аркылуу байланышуу · 0774 06 23 44 <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="rsvp-section section-pad" id="rsvp">
+      <p class="eyebrow">СИЗДИ КҮТӨБҮЗ</p>
+      <h2>Келериңизди<br><em>билдирип коюңуз</em></h2>
+      <p class="rsvp-copy">Сураныч, 2027-жылдын 1-августуна чейин жооп калтырыңыз.</p>
+      <div class="invitation-marquee" aria-label="Тойго чакыруу">
+        <div class="invitation-marquee-track" id="invitation-marquee">
+          <span>Кымбаттуу конок, сиздерди Айбек менен Айдананын тоюна чакырабыз! <span aria-hidden="true">♥</span></span>
+          <span aria-hidden="true">Кымбаттуу конок, сиздерди Айбек менен Айдананын тоюна чакырабыз! <span>♥</span></span>
+        </div>
+      </div>
+      <form class="rsvp-form" id="rsvp-form">
+        <label for="guest-name">Атыңыз</label>
+        <input id="guest-name" name="name" type="text" placeholder="Толук аты-жөнүңүз" autocomplete="name" required>
+        <label for="guest-phone">Байланыш номериңиз</label>
+        <input id="guest-phone" name="phone" type="tel" placeholder="0770 00 00 00" autocomplete="tel" pattern="[0-9+() -]{7,20}" required>
+        <fieldset class="attendance-options">
+          <legend>Тойго катышасызбы?</legend>
+          <label class="attendance-option">
+            <input type="radio" name="attendance" value="yes" required>
+            <span>Жубайым экөөбүз барабыз</span>
+          </label>
+          <label class="attendance-option">
+            <input type="radio" name="attendance" value="no">
+            <span>Бара албайбыз</span>
+          </label>
+        </fieldset>
+        <button class="button button-dark" type="submit">WhatsApp'ка жөнөтүү <span>↗</span></button>
+        <button class="button button-light speak-invitation" type="button">Чакыруу текстин угуу <span>♫</span></button>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="rsvp-note">Сиздин катышууңуз биз үчүн чоң белек. Гүлдүн ордуна жылуу тилегиңизди алып келсеңиз жетиштүү.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-mark" href="#home">A<span>&amp;</span>A</a>
+    <p>Сүйүү менен, Айбек &amp; Айдана</p>
+    <span>22 · 08 · 2027</span>
+  </footer>
+  <button class="music-toggle" id="music-toggle" type="button" aria-pressed="false" aria-label="Музыканы күйгүзүү">
+    <span class="music-icon" aria-hidden="true">♫</span><span class="music-label">Музыканы күйгүзүү</span>
+  </button>
+  <a class="whatsapp-float" href="https://wa.me/996774062344" target="_blank" rel="noreferrer" aria-label="0774 06 23 44 номерине WhatsApp аркылуу жазуу">WhatsApp <span>↗</span></a>
+</body>
+</html>
